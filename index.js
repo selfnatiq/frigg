@@ -119,7 +119,7 @@ function writeUserGroupCollection(content) {
 }
 
 function mergeEverything(content) {
-	const dataFile = path.join(__dirname, 'import-nmu.csv')
+	const dataFile = path.join(__dirname, 'data-nmu.csv')
 
 	const types = writeTypeCollection(content)
 	const systemUsers = writeSystemUserCollection(content)
