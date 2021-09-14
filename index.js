@@ -144,7 +144,6 @@ function mergeEverything(content) {
 
 		const doc = {
 			_id,
-			content,
 			size,
 			compression,
 			systemUser: foundUser._id,
@@ -153,6 +152,7 @@ function mergeEverything(content) {
 			path,
 			time,
 			mode,
+			content,
 		}
 
 		acc.push(doc)
