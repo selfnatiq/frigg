@@ -1,7 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 
-const file = path.join(__dirname, 'data.csv')
+// read the generated data from frigg
+const file = path.join(__dirname, 'frigg.csv')
 
 let content = fs.readFileSync(file, 'utf8')
 content = csvJSON(content)
@@ -61,7 +62,7 @@ function jsonCSV(json) {
 }
 
 function writeTypeCollection(content) {
-	const typeFile = path.join(__dirname, 'type.csv')
+	const typeFile = path.join(__dirname, 'type-nmu.csv')
 
 	const data = content.reduce((acc, next) => {
 		const { count: _id, type } = next
@@ -80,7 +81,7 @@ function writeTypeCollection(content) {
 }
 
 function writeSystemUserCollection(content) {
-	const systemUserFile = path.join(__dirname, 'systemUser.csv')
+	const systemUserFile = path.join(__dirname, 'systemUsers-nmu.csv')
 
 	const data = content.reduce((acc, next) => {
 		const { uid: _id, user } = next
@@ -99,7 +100,7 @@ function writeSystemUserCollection(content) {
 }
 
 function writeUserGroupCollection(content) {
-	const userGroupFile = path.join(__dirname, 'userGroup.csv')
+	const userGroupFile = path.join(__dirname, 'userGroups-nmu.csv')
 
 	const data = content.reduce((acc, next) => {
 		const { gid: _id, group } = next
@@ -118,7 +119,7 @@ function writeUserGroupCollection(content) {
 }
 
 function mergeEverything(content) {
-	const dataFile = path.join(__dirname, 'import.csv')
+	const dataFile = path.join(__dirname, 'import-nmu.csv')
 
 	const types = writeTypeCollection(content)
 	const systemUsers = writeSystemUserCollection(content)
