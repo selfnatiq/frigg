@@ -127,7 +127,8 @@ function mergeEverything(content) {
 
 	const data = content.reduce((acc, next) => {
 		const {
-			digest: _id,
+			count: _id,
+			digest,
 			data: content,
 			size,
 			compression,
@@ -145,6 +146,7 @@ function mergeEverything(content) {
 
 		const doc = {
 			_id,
+			digest,
 			size,
 			compression,
 			systemUser: foundUser._id,
