@@ -62,7 +62,7 @@ function jsonCSV(json) {
 }
 
 function writeTypeCollection(content) {
-	const typeFile = path.join(__dirname, 'type-nmu.csv')
+	const typeFile = path.join(__dirname, 'types-nmu.csv')
 
 	const data = content.reduce((acc, next) => {
 		const { count: _id, type } = next
